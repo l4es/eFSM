@@ -1,0 +1,82 @@
+
+
+
+event_start_init-50
+event_init_ack_tmo-100
+event_init_ack_tmo-116 init time out count=1  threshold=3 
+event_init_ack_tmo-100
+event_init_ack_tmo-116 init time out count=2  threshold=3 
+event_init_ack_rcvd-82
+event_start_term-138
+event_term_ack_rcvd-171
+
+FSM: Demo State Machine History 
+Current State  /   Event   /  New State  /  rc  
+------------------------------------------------
+ 0-Idle State  /  0-Start Session Init  /  1-Wait for Init Ack State  /  0
+ 1-Wait for Init Ack State  /  2-Session Init ACK TMO  /  1-Wait for Init Ack State  /  0
+ 1-Wait for Init Ack State  /  2-Session Init ACK TMO  /  1-Wait for Init Ack State  /  0
+ 1-Wait for Init Ack State  /  3-Session Init ACK  /  2-Established State  /  0
+ 2-Established State  /  4-Start Session Termination  /  3-Wait for Terminate Ack State  /  0
+ 3-Wait for Terminate Ack State  /  6-Session Terminate ACK  /  0-Idle State  /  0
+
+
+FSM: Demo State Machine Counters 
+       Invalid events = 0
+       Invalid states = 0
+ Exception states set = 0
+         Quiet states = 0
+        Handler error = 0
+       Ignored events = 0
+
+
+FSM: Demo State Machine 
+    number_states = 4
+    number_events = 7
+    curr_state = Idle State
+
+ State: Idle State 
+ Event   /   Next State     
+----------------------------
+  0-Start Session Init / Wait for Init Ack State 
+  1-Session Init / Established State 
+  2-Session Init ACK TMO / Idle State 
+  3-Session Init ACK / Idle State 
+  4-Start Session Termination / Idle State 
+  5-Session Terminate / Idle State 
+  6-Session Terminate ACK / Idle State 
+
+ State: Wait for Init Ack State 
+ Event   /   Next State     
+----------------------------
+  0-Start Session Init / Wait for Init Ack State 
+  1-Session Init / Wait for Init Ack State 
+  2-Session Init ACK TMO / Wait for Init Ack State 
+  3-Session Init ACK / Established State 
+  4-Start Session Termination / Wait for Init Ack State 
+  5-Session Terminate / Idle State 
+  6-Session Terminate ACK / Wait for Init Ack State 
+
+ State: Established State 
+ Event   /   Next State     
+----------------------------
+  0-Start Session Init / Established State 
+  1-Session Init / Established State 
+  2-Session Init ACK TMO / Established State 
+  3-Session Init ACK / Established State 
+  4-Start Session Termination / Wait for Terminate Ack State 
+  5-Session Terminate / Idle State 
+  6-Session Terminate ACK / Established State 
+
+ State: Wait for Terminate Ack State 
+ Event   /   Next State     
+----------------------------
+  0-Start Session Init / Wait for Terminate Ack State 
+  1-Session Init / Wait for Terminate Ack State 
+  2-Session Init ACK TMO / Wait for Terminate Ack State 
+  3-Session Init ACK / Wait for Terminate Ack State 
+  4-Start Session Termination / Wait for Terminate Ack State 
+  5-Session Terminate / Idle State 
+  6-Session Terminate ACK / Idle State 
+
+
